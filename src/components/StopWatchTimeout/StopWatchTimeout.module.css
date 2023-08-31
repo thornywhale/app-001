@@ -1,0 +1,15 @@
+body {
+  min-width: 500px;
+  background-color: blueviolet;
+  font-size: 72px;
+}
+article {
+  padding: 5% 5%;
+}
+h2 {
+  background-color: white;
+}
+button {
+  min-width: 120px;
+  width: 20%;
+}
