@@ -23,7 +23,7 @@ class StopWatchTimeout extends Component {
   start = () => {
     if (this.idTimeout === null) {
       this.idTimeout = setTimeout(this.tick, 1000);
-      const { isVisible } = this.props; 
+      const { isVisible } = this.props;
       return (this.isVisible = !isVisible); // інверсія через секунду по факту старту
     }
   };
@@ -43,7 +43,10 @@ class StopWatchTimeout extends Component {
   }
 
   componentDidUpdate() {
-    this.idTimeout = setTimeout(this.tick, 1000);
+    const { time } = this.state;
+    time.getSeconds() === 0
+      ? this.stop()
+      : (this.idTimeout = setTimeout(this.tick, 1000));
   }
 
   componentWillUnmount() {
