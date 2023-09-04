@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import StopWatchTimeout from './components/StopWatchTimeout/index';
+import SignInForm from './components/SignInForm/SignInForm';
 
 function App() {
   return (
     <>
-      <StopWatchTimeout/>
+      <SignInForm />
     </>
   );
 }
