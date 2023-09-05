@@ -1,0 +1,20 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding-top: 10vh;
+  background-color: rgb(214, 255, 167);
+}
+div {
+  display: flex;
+  text-align: center;
+  width: 50vw;
+  border: 2px solid darkgreen;
+}
+button {
+  width: 80px;
+}
+h2 {
+  border: 1px solid darkgreen;
+}

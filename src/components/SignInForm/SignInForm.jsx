@@ -8,9 +8,7 @@ const initialValues = {
   passwordValid: true,
   loginValid: true,
   check: false,
-  optionOne: true,
-  optionTwo: false,
-  optionThree: false,
+  radioState: false,
 };
 
 class SignInForm extends Component {
@@ -45,9 +43,7 @@ class SignInForm extends Component {
   render() {
     const {
       check,
-      optionOne,
-      optionTwo,
-      optionThree,
+      radioState,
       email,
       login,
       password,
@@ -100,31 +96,31 @@ class SignInForm extends Component {
         </label>
         <div>
           <input
-            value={optionOne}
+            value={false}
             onChange={this.handleRadio}
             type="radio"
             name="optionOne"
-            checked={optionOne === true}
+            checked={radioState}
           />
           <p> i need antivirus</p>
         </div>
         <div>
           <input
-            value={optionTwo}
+            value={false}
             onChange={this.handleRadio}
             type="radio"
             name="optionTwo"
-            checked={optionTwo === true}
+            checked={radioState}
           />
           <p> i need cleaner</p>
         </div>
         <div>
           <input
-            value={optionThree}
+            value={true}
             onChange={this.handleRadio}
             type="radio"
             name="optionThree"
-            checked={optionThree === true}
+            checked={radioState}
           />
           <p> i love spam</p>
         </div>
