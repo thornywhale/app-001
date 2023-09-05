@@ -1,6 +1,14 @@
 import { Component } from "react";
+import PropTypes from "prop-types";
+import styles from "./Ciao.module.css"
 
 class Ciao extends Component {
+  /**
+   * @param {object} props
+   * @param {number} props.id
+   * @param {string} props.name
+   * @param {string} props.lname
+   */
   constructor(props) {
     super(props);
     this.state = {
@@ -23,4 +31,15 @@ class Ciao extends Component {
   }
 }
 
+Ciao.propTypes = {
+  name: PropTypes.string.isRequired,
+  lname: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+};
+
+Ciao.defaultProps = {
+  name: "noname",
+  lname: "no lname",
+  id: NaN,
+};
 export default Ciao;

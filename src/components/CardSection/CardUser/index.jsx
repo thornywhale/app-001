@@ -1,4 +1,6 @@
 import React from "react";
+// import { Component } from "react";
+import PropTypes from "prop-types";
 
 const CardUser = (props) => {
   const {
@@ -33,5 +35,21 @@ const CardUser = (props) => {
 //     );
 //   }
 // }
+
+CardUser.propTypes = {
+  user: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string,
+    lname: PropTypes.string,
+  }).isRequired,
+  selectorUser: PropTypes.func.isRequired,
+};
+CardUser.defaultProps = {
+  user: {
+    id: 0,
+    firstName: "noname",
+  },
+  selectorUser: () => {},
+};
 
 export default CardUser;

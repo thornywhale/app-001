@@ -8,7 +8,9 @@ const initialValues = {
   passwordValid: true,
   loginValid: true,
   check: false,
-  option: true,
+  optionOne: true,
+  optionTwo: false,
+  optionThree: false,
 };
 
 class SignInForm extends Component {
@@ -36,14 +38,16 @@ class SignInForm extends Component {
   // handleRadio = (event) => {
   //   this.setState({ option: event.target.value });
   // };
-  handleRadio = ({ target: { name, option } }) => {
-    this.setState({ [name]: option });
+  handleRadio = ({ target: { name, checked } }) => {
+    this.setState({ [name]: checked });
   };
 
   render() {
     const {
       check,
-      option,
+      optionOne,
+      optionTwo,
+      optionThree,
       email,
       login,
       password,
@@ -96,31 +100,31 @@ class SignInForm extends Component {
         </label>
         <div>
           <input
-            value={true}
+            value={optionOne}
             onChange={this.handleRadio}
             type="radio"
-            name="radio1"
-            checked={option === true}
+            name="optionOne"
+            checked={optionOne === true}
           />
           <p> i need antivirus</p>
         </div>
         <div>
           <input
-            value={true}
+            value={optionTwo}
             onChange={this.handleRadio}
             type="radio"
-            name="radio1"
-            checked={option === true}
+            name="optionTwo"
+            checked={optionTwo === true}
           />
           <p> i need cleaner</p>
         </div>
         <div>
           <input
-            value={true}
+            value={optionThree}
             onChange={this.handleRadio}
             type="radio"
-            name="radio1"
-            checked={option === true}
+            name="optionThree"
+            checked={optionThree === true}
           />
           <p> i love spam</p>
         </div>
