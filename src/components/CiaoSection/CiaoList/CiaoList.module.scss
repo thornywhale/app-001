@@ -1,0 +1,30 @@
+// OLD, pre-depricated (a few years)
+
+// @import "./../../../common/styles/breakpoints";
+
+//---------------------------
+
+// NEW
+
+// v1, need to use namespaces in css
+
+// @use "//src/common/styles/breakpoints";
+
+// v2
+
+@use "/src/common/styles/breakpoints" as *;
+@use "/src/common/styles/colors" as *;
+@use "/src/common/styles/templates" as *;
+
+.container {
+  @extend %flex-between;
+  width: 80%;
+  min-width: 600px;
+  max-width: 1100px;
+  margin: 0;
+  border: 10px solid $colorMain;
+  background-color: $colorBg;
+  @media screen and (max-width: $widthSmallDevices) {
+    width: 100%;
+  }
+}

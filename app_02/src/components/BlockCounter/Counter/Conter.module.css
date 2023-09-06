@@ -7,7 +7,8 @@ body {
   background-color: rgb(214, 255, 167);
 }
 div {
-  display: flex;
+  display: grid;
+  gap: 20px;
   text-align: center;
   width: 50vw;
   border: 2px solid darkgreen;

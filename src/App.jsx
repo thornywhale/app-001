@@ -1,10 +1,25 @@
 import React from "react";
 import "./App.css";
-// import SignInForm from './components/SignInForm/SignInForm';
+import Note from "./components/Note";
+import SignInForm from './components/SignInForm/SignInForm';
 // import Ciao from "./components/CiaoSection/Ciao";
 // import CardUser from "./components/CardSection/CardUser";
-import SignInForm from "./components/SignInForm/SignInForm";
+// import CiaoSection from './components/CiaoSection';
 
+const List = (props) => {
+  return (
+    <article>
+      <h3>List title</h3>
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+    </article>
+  );
+};
 const CardUserObject = {
   id: 45,
   firstName: "Carl",
@@ -12,7 +27,13 @@ const CardUserObject = {
 function App() {
   return (
     <>
-      {/* <Ciao name="jack" /> */}
+      {/* <Note>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi iusto repellendus blanditiis recusandae corporis odit facere! Omnis maxime corporis tempore.
+        </p>
+      </Note> */}
+      {/* <List /> */}
+      {/* <CiaoSection /> */}
       {/* <CardUser user={CardUserObject} /> */}
       <SignInForm/>
     </>

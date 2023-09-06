@@ -24,15 +24,17 @@ class BlockCounter extends Component {
   render() {
     const { step } = this.state;
     return (
-      <div>
-        <Counter stepValue={step} />
+      <>
+        <div>
+          <Counter stepValue={step} />
+        </div>
         <input
           type="number"
           value={this.state.step}
           onChange={this.inputHandler}
         />
         <button onClick={this.autoClickHandler}>autoClick</button>
-      </div>
+      </>
     );
   }
 }

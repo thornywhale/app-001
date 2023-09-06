@@ -1,0 +1,7 @@
+@use "/src/common/styles/colors" as *;
+
+.note {
+  &__h2 {
+    color: $colorMain;
+  }
+}
