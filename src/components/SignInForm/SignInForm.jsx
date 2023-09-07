@@ -100,17 +100,17 @@ class SignInForm extends Component {
             onChange={this.handleRadio}
             type="radio"
             name="option"
-            checked={radioState}
+            checked={radioState==="antivirus"}
           />
           <p> i need antivirus</p>
-        </div>ʼ
+        </div>
         <div>
           <input
             value={"cleaner"}
             onChange={this.handleRadio}
             type="radio"
             name="option"
-            checked={radioState}
+            checked={radioState==="cleaner"}
           />
           <p> i need cleaner</p>
         </div>
@@ -120,7 +120,7 @@ class SignInForm extends Component {
             onChange={this.handleRadio}
             type="radio"
             name="option"
-            checked={radioState}
+            checked={radioState==="spam"}
           />
           <p> i love spam</p>
         </div>
