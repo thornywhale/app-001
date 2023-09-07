@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-// import Note from "./components/Note";
+import Note from "./components/Note";
 import SignInForm from './components/SignInForm/SignInForm';
-// import UsersLoader from "./components/UsersLoader";
-// import Ciao from "./components/CiaoSection/Ciao";
-// import CardUser from "./components/CardSection/CardUser";
-// import CiaoSection from './components/CiaoSection';
+import UsersLoader from "./components/UsersLoader";
+import Ciao from "./components/CiaoSection/Ciao";
+import CardUser from "./components/CardSection/CardUser";
+import CiaoSection from './components/CiaoSection';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
       {/* <List /> */}
       {/* <CiaoSection /> */}
       {/* <CardUser user={CardUserObject} /> */}
-      <SignInForm/>
+      {/* <SignInForm/> */}
     </>
   );
 }

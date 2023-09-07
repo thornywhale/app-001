@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import styles from "./Conter.module.css";
-import classNames from "classnames";
 import PropTypes from "prop-types";
 
-// Counter.propTypes = {
-
-// };
+/**
+ * @param {number} state.count
+ * @param {boolean} state.isAdd
+ * @param {number} props.stepValue
+ */
 
 class Counter extends Component {
   constructor(props) {
@@ -51,5 +52,13 @@ class Counter extends Component {
     );
   }
 }
+
+Counter.propTypes = {
+  stepValue: PropTypes.number.isRequired,
+};
+
+Counter.defaultProps = {
+  stepValue: 10,
+};
 
 export default Counter;

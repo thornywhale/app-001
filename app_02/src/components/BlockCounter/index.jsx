@@ -1,10 +1,5 @@
 import React, { Component } from "react";
 import Counter from "./Counter";
-import PropTypes from "prop-types";
-
-Counter.propTypes = {
- 
-};
 
 class BlockCounter extends Component {
   constructor(props) {
@@ -21,8 +16,11 @@ class BlockCounter extends Component {
     }
   };
   autoClickHandler = () => {
+    const { step } = this.state;
+    const input = step;
     setInterval(() => {
       {
+        this.setState({ step: step + input });
       }
     }, 1000);
   };
