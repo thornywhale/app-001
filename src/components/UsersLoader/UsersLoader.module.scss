@@ -1,0 +1,30 @@
+body {
+  background-color: antiquewhite;
+  font-size: 32px;
+}
+h2 {
+  text-align: center;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+span {
+  margin: 20px 0 20px 20px;
+}
+select{
+  width: 50px;
+  margin-right: 20px;
+}
+button {
+  width: 50px;
+  height: 50px;
+  background-color: cadetblue;
+  border: 4px double antiquewhite;
+}
+ul {
+  font-family: Arial, Helvetica, sans-serif;
+  list-style-type: none;
+}

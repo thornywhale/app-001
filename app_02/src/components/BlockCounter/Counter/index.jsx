@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import styles from "./Conter.module.css";
 import classNames from "classnames";
+import PropTypes from "prop-types";
+
+// Counter.propTypes = {
+
+// };
+
 class Counter extends Component {
   constructor(props) {
     super(props);

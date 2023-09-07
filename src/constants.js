@@ -20,3 +20,12 @@ export const USERS = [
     lastName: "Anderson",
   },
 ];
+
+export const API = {
+  URL: "https://randomuser.me/api/",
+  RESULTS: 10,
+  PAGE: 1,
+  KEY: "fm2023-01",
+  NAT: "gb",
+};
+

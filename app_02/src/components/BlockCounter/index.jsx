@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 import Counter from "./Counter";
+import PropTypes from "prop-types";
+
+Counter.propTypes = {
+ 
+};
 
 class BlockCounter extends Component {
   constructor(props) {
