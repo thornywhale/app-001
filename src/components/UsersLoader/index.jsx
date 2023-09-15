@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { getUsers } from "../../api";
-import styles from "./UsersLoader.module.scss";
-import Error from "../Error";
-import { isDisabled } from "@testing-library/user-event/dist/utils";
+import React, { Component } from 'react';
+import { getUsers } from '../../api';
+import Error from '../Error';
+import Spinner from '../Spinner';
+// import styles from './UsersLoader.module.scss';
 
 class UsersLoader extends Component {
   constructor(props) {
@@ -21,12 +21,15 @@ class UsersLoader extends Component {
     this.setState({ isFetching: true });
     getUsers({ page: currentPage, results: currentResults })
       .then((data) => {
-        // console.log(data.results);
+        // console.log(data);
+        if (data.error) {
+          throw new Error();
+        }
         this.setState({ users: data.results });
       })
-      .catch((error) => {
-        // console.log(error);
-        this.setState({ error: error });
+      .catch((err) => {
+        // console.dir(err);
+        this.setState({ error: err });
       })
       .finally(() => {
         this.setState({ isFetching: false });
@@ -36,64 +39,40 @@ class UsersLoader extends Component {
   componentDidMount() {
     this.load();
   }
-
   componentDidUpdate(prevProps, prevState) {
-    const { currentPage, currentResults } = this.state;
-    if (
-      currentPage !== prevState.currentPage ||
-      currentResults !== prevState.currentResults
-    ) {
+    if (this.state.currentPage !== prevState.currentPage) {
       this.load();
     }
   }
 
   prevPage = () => {
     if (this.state.currentPage > 1) {
-      this.setState((state, props) => {
-        return { currentPage: state.currentPage - 1 };
-      });
+      this.setState((state, props) => ({ currentPage: state.currentPage - 1 }));
     }
   };
-  nextPage = () => {
-    this.setState((state, props) => {
-      return { currentPage: state.currentPage + 1 };
-    });
-  };
 
-  currentResultsHandler = (event) => {
-    this.setState({ currentResults: event.target.value });
-    // event.target.option.disabled = true;
-  };
+  nextPage = () =>
+    this.setState((state, props) => ({ currentPage: state.currentPage + 1 }));
 
   render() {
-    const { isFetching, error, users, currentPage, currentResults } =
-      this.state;
+    const { isFetching, error, users, currentPage } = this.state;
     if (error) {
       return <Error />;
     }
     return (
       <section>
-        <h2>Users: </h2>
+        <h2>'Users': 'Користувачі'</h2>
         <div>
-          <button onClick={this.prevPage}>&lt;</button>
+          <button onClick={this.prevPage} disabled={currentPage === 1}>
+            &lt; prev
+          </button>
           <span>&nbsp;{currentPage}&nbsp;</span>
-          <select value={currentResults} onChange={this.currentResultsHandler}>
-            <option value={5} selected>
-              5
-            </option>
-            <option value={10}>10</option>
-            <option value={15}>15</option>
-          </select>
-          <button onClick={this.nextPage}>&gt;</button>
+          <button onClick={this.nextPage}>next &gt;</button>
         </div>
         <ul>
-          {isFetching && <h2>Loading...</h2>}
+          {isFetching && <Spinner />}
           {isFetching ||
-            users.map((user) => (
-              <li key={user.login.uuid}>
-                <strong>{user.login.username},</strong> {user.email}
-              </li>
-            ))}
+            users.map((user) => <li key={user.login.uuid}>{user.email}</li>)}
         </ul>
       </section>
     );

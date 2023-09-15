@@ -8,7 +8,7 @@ const initialValues = {
   passwordValid: true,
   loginValid: true,
   check: false,
-  radioState: "spam",
+  option: "spam",
 };
 
 class SignInForm extends Component {
@@ -36,13 +36,14 @@ class SignInForm extends Component {
   // handleRadio = (event) => {
   //   this.setState({ option: event.target.value });
   // };
-  handleRadio = ({ target: { name, checked } }) => {
-    this.setState({ [name]: checked });
+  handleRadio = ({ target: { name, value } }) => {
+    this.setState({ [name]: value });
   };
 
   render() {
     const {
       check,
+      option,
       radioState,
       email,
       login,

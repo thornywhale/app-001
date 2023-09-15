@@ -1,0 +1,5 @@
+[
+  { "id": 1, "title": "milk", "price": "100uah" },
+  { "id": 2, "title": "tea", "price": "80uah" },
+  { "id": 3, "title": "coffee", "price": "130uah" }
+]
